@@ -1,0 +1,735 @@
+* {margin: 0; padding: 0; }
+
+body {font-family: Arial, Helvetica, Sans-serif; }
+header {display: block;  background-color: #4A90E2; padding: 20px; border-bottom: 3px solid #000000;}
+h1 {font-weight: normal; padding: 1.5em; color: white; text-shadow: 1px 1px 0px #444; width: 1000px; margin: auto;}
+
+.account {
+    float: right;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-account {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.body_deg {
+    background-image: url('images/bg2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: cover;
+    width: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.form_deg {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 450px;
+    height: auto;
+    min-height: 400px;
+    position: relative;
+}
+
+.title_deg {
+    background-color: #ffffff;
+    padding: 5px 20px 20px 5px;
+    text-align: left;
+    border-bottom: 2px solid #f0f0f0;
+    height: 70px;
+}
+
+.title_deg img {
+    width: 120px;
+    max-width: 60%;
+    height: auto;
+    float: left;
+    object-fit: contain;
+    display: block;
+    text-align: left;
+    margin: 0 auto 10px;
+}
+
+.title_deg h4 {
+    text-align: center;
+    font-size: 14px;
+    color: #e74c3c;
+    min-height: 20px;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.login_form {
+    background-color: #ffffff;
+    padding: 30px 30px 50px 30px; /* Tăng padding dưới để tránh đè lên back button */
+    width: 90%;
+}
+
+.login_form h4 {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Tăng khoảng cách giữa các div trong form */
+.login_form > div {
+    margin-bottom: 25px; /* Tăng từ 20px lên 25px */
+}
+
+.label_deg {
+    display: block;
+    color: #333;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.login_form input[type="text"],
+.login_form input[type="password"] {
+    width: 92%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #f8f9fa;
+    transition: all 0.3s;
+}
+
+.login_form input[type="text"]:focus,
+.login_form input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.login_form .btn-primary {
+    width: 30%;
+    padding: 12px 24px;
+    float: right;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.login_form .btn-primary:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.footer_login {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 12px;
+    background-color: rgba(0, 123, 255, 0.85);
+    color: white;
+    font-size: 0.75em;
+    backdrop-filter: blur(5px);
+}
+
+nav{background-color:#50C878;border-bottom: 3px solid #040404;}
+nav a{color:#fff;text-decoration:none;font-weight:600;}
+nav ul{display:table;width:1000px;margin:auto;}
+nav li{display:table-cell;text-align:center;padding:1em;}
+nav li:hover{background-color:#3ea66d;}
+nav a:hover{color:#f5fbff;}
+
+main {overflow: auto; min-height: 90vh; background-color: #f7f7f7; width: 1000px; margin: auto; box-shadow: -1000px 0 0 #f7f7f7, 1000px 0 0 #f7f7f7; }
+
+footer {padding: 1em; background-color: #FFC9A7 ; font-size: 0.8em;}
+
+p {margin-bottom: 1em;}
+
+body {font-size: 1.2em; font-family: arial, helvetica, sans-serif}
+input, label, select, textarea {float: left; width: 15em; margin-bottom: 1em;  padding: 0.5em;}
+label {clear: left; padding: 0; margin: 0;}
+input[type="submit"] { width: auto; padding: 0.5em 1em; clear: both}
+form {overflow: auto; clear: both; display: block;}
+
+blockquote {display: table; margin-bottom: 1em; border-bottom: 1px solid #ccc; padding: 0.5em; }
+blockquote p {display: table-cell; width: 70%; vertical-align: top;}
+blockquote form {  display: table-cell; width: 10%;}
+
+.errors {padding: 1em; border: 1px solid red; background-color: lightyellow; color: red; margin-bottom: 1em; overflow: auto;}
+.errors ul {margin-left: 1em;}
+
+form p {clear: both;}
+input[type="checkbox"] {float: left; clear: left; width: auto; margin-right: 10px;}
+input[type="checkbox"] + label {clear: right;}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group label .required {
+    color: #dc3545;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+select.form-control {
+    cursor: pointer;
+    background: #fff;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.upload-area {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    background: #fafafa;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.upload-area:hover {
+    border-color: #007bff;
+    background: #f0f8ff;
+}
+
+.upload-area .icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.upload-area p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.upload-area .file-types {
+    font-size: 12px;
+    color: #999;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    color: rgb(9, 9, 9);
+}
+
+.btn-primary:hover {
+    background: #d3dae0;
+}
+
+.btn-secondary {
+    clear: both;
+    color: rgb(255, 9, 9);
+}
+
+.btn-secondary:hover {
+    background: #e4b7b9;
+}
+
+.alert {
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.compose{ max-width:640px; margin:24px auto; padding:0 12px; }
+.compose-form{ background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+
+.compose-form .row label,
+.compose-form .row input,
+.compose-form .row textarea{
+  float:none;
+  width:auto;
+}
+
+.row{
+  display:grid;
+  grid-template-columns: 120px 1fr;
+  align-items:center;
+  gap:12px;
+  padding:12px 16px;
+  border-bottom:1px solid var(--line);
+}
+.row:last-of-type{ border-bottom:0; }
+
+.row label{
+  color:var(--hint);
+  font-weight:600;
+  padding-right:50px;
+  border-right:1px solid var(--line);
+  text-align:right;
+}
+
+.row input{
+  height:38px;
+  padding:0 10px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  font:inherit;
+  width:100%;
+  outline:none;
+}
+
+.row.body{
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 12px 16px;
+}
+.row.body label{
+  text-align: left;
+  border-right: 0;
+  padding-right: 0;
+}
+.row.body textarea{
+  width: 90%;
+  min-height: 240px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+}
+
+.row input:focus, .row.body textarea:focus{
+  border-color:#1a73e8;
+  box-shadow:0 0 0 3px rgba(26,115,232,.12);
+}
+
+.actions{
+  display:flex; gap:8px;
+  padding:10px 16px 14px;
+  border-top:1px solid var(--line);
+}
+.send{
+  background:#1a73e8; color:#fff; border:0; border-radius:20px;
+  padding:8px 18px; font-weight:600; cursor:pointer;
+}
+.send:hover{ filter:brightness(.95); }
+
+@media (max-width:560px){
+  .row{ grid-template-columns: 96px 1fr; }
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+.table-container th,
+.table-container td {
+    border: 3px solid #121111;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.table-container thead {
+    background: #4A90E2;
+}
+
+.table-container td.actions-cell {
+    border: none;
+    text-align: right;
+}
+
+#file-name {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.upload-area {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    background: #fafafa;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.upload-area:hover {
+    border-color: #007bff;
+    background: #f0f8ff;
+}
+
+.upload-area .icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.upload-area p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.upload-area .file-types {
+    font-size: 12px;
+    color: #999;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+    justify-content: flex-end;
+}
+
+.muted {
+    color: #999;
+    font-style: italic;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #bbb;
+}
+
+
+
+.form_deg.auto-height {
+    height: auto !important;
+    min-height: 400px;
+}
+
+.user-info {
+    background: #e3f2fd;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-left: 4px solid #007bff;
+}
+
+.user-info strong {
+    color: #0056b3;
+    font-weight: 600;
+}
+
+.user-info.warning {
+    background: #fff3cd;
+    border-left-color: #ffc107;
+}
+
+.user-info.warning strong {
+    color: #856404;
+}
+
+/* Link quên mật khẩu */
+.forgot-password {
+    text-align: left;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.forgot-password a {
+    color: #007bff;
+    margin-top: 100px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* ĐẶT NÚT BACK CỐ ĐỊNH Ở DƯỚI CÙNG FORM */
+.back-link {
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: left;
+    padding-bottom: 10px;
+    background: linear-gradient(to top, rgba(255,255,255,0.95), transparent);
+}
+
+.back-link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.back-link a:hover {
+    color: #007bff;
+    background: #e3f2fd;
+    border-color: #007bff;
+}
+
+/* Thông báo lỗi/thành công */
+.message {
+    padding: 12px 15px;
+    margin-bottom: 20px; /* Tăng margin để tách rời khỏi form */
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    animation: slideDown 0.3s ease;
+}
+
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-left: 4px solid #dc3545;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-left: 4px solid #28a745;
+}
+
+.password-requirements {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    margin-left: 2px;
+    font-style: italic;
+}
+
+.login-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.login-steps .step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #999;
+}
+
+.login-steps .step.active {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.login-steps .step.completed {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.login-steps .step-number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e9ecef;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.login-steps .step.active .step-number {
+    background: #007bff;
+    color: white;
+}
+
+.login-steps .step.completed .step-number {
+    background: #28a745;
+    color: white;
+}
+
+.login-steps .divider {
+    width: 30px;
+    height: 2px;
+    background: #dee2e6;
+}
+
+/* register link style */
+.sign-up-link {
+    margin-top: 15px;
+    text-align: left;
+}
+.sign-up-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 550;
+}
+.sign-up-link a:hover {
+    text-decoration: underline;
+    color: #0606fb;
+}
+
+.login_form a.btn_register {
+    display: inline-block;
+    padding: 12px 24px;
+    float: right;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+}
