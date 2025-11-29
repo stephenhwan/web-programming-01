@@ -30,14 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = 'Username cannot be empty';
     } else {
         try {
-            // ✅ Thêm logic hash password nếu có nhập mới
             $updateData = [
                 'username' => $username,
                 'email' => $email
             ];
             
             if (!empty($password)) {
-                $updateData['password'] = password_hash($password, PASSWORD_DEFAULT);
+                $updateData['user_password'] = password_hash($password, PASSWORD_DEFAULT);
             }
             
             update_user($pdo, $id, $updateData);

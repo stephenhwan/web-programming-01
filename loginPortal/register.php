@@ -6,9 +6,9 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
-    $user_password = trim($_POST['user_password'] ?? '');
+    $user_password = 'user1234';
     $user_type = 'user';
-    $email = '';
+    $email = trim($_POST['email'] ?? '');
     
     if ($username === '' || $user_password === '') {
         $_SESSION['loginMessage'] = 'Please fill all fields';
@@ -25,10 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'user_type' => $user_type,
             'email' => $email
         ]);
-        $_SESSION['loginMessage'] = '✅ Registration successful! You can now log in.';
-        $_SESSION['loginMessageType'] = 'success';
-        header('Location: username_login.php'); 
+        
+
+        $_SESSION['send_welcome_email'] = true;
+        $_SESSION['new_user_username'] = $username;
+        $_SESSION['new_user_password'] = $user_password;
+        $_SESSION['new_user_email'] = $email;
+
+        header('Location: ../contact.php'); 
         exit();
+        
     } catch (Exception $e) {
         $_SESSION['loginMessage'] = 'Error: ' . $e->getMessage();
         $_SESSION['loginMessageType'] = 'error';

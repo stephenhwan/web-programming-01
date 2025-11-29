@@ -26,8 +26,8 @@ unset($_SESSION['loginMessage'], $_SESSION['loginMessageType']);
                                
                     </div>
                     <div>
-                        <label class="label_deg">Password</label>
-                        <input type="password" name="user_password" required autofocus minlength="8" >
+                        <label class="label_deg">Email</label>
+                        <input type="email" name="email" required autofocus >
 
                         <button type="submit" class="btn-primary" autofocus>Submit</button>
                                      
