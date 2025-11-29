@@ -1,3 +1,10 @@
+<?php
+session_start();
+$message = $_SESSION['loginMessage'] ?? '';           
+$messageType = $_SESSION['loginMessageType'] ?? 'error';  
+
+unset($_SESSION['loginMessage'], $_SESSION['loginMessageType']);
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,15 +16,7 @@
             <div class="form_deg auto-height">
                 <div class="title_deg">
                     <img src="../images/icon.jpg" alt="Logo">
-                    <h4>
-                        <?php
-                        error_reporting(0);
-                        session_start();
-                        $message = $_SESSION['loginMessage'] ?? '';
-                        unset($_SESSION['loginMessage']);
-                        echo $message;
-                        ?>
-                    </h4>
+
                 </div>
                 <form action="register.php" method="POST" class="login_form">
                     <h4>Register New User</h4>
@@ -28,14 +27,22 @@
                     </div>
                     <div>
                         <label class="label_deg">Password</label>
-                        <input type="password" name="user_password" required autofocus >
+                        <input type="password" name="user_password" required autofocus minlength="8" >
 
                         <button type="submit" class="btn-primary" autofocus>Submit</button>
                                      
                     </div>
                                 <div class="back-link">
                         <a href="username_login.php"><= Back</a>
-                    </div>        
+                    </div>
+                        <div class="message-container">
+                        
+                        <?php if ($message): ?>
+                            <div class="message <?= htmlspecialchars($messageType) ?>">
+                                <?= htmlspecialchars($message) ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>            
                 </form>
             </div>
         </main>

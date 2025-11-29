@@ -1,3 +1,10 @@
+<?php
+session_start();
+$message = $_SESSION['loginMessage'] ?? '';           
+$messageType = $_SESSION['loginMessageType'] ?? 'error';  
+
+unset($_SESSION['loginMessage'], $_SESSION['loginMessageType']);
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,29 +17,27 @@
             <div class="form_deg auto-height">
                 <div class="title_deg">
                     <img src="../images/icon.jpg" alt="Logo">
-                    <h4>
-                        <?php
-                        error_reporting(0);
-                        session_start();
-                        $message = $_SESSION['loginMessage'] ?? '';
-                        unset($_SESSION['loginMessage']);
-                        echo $message;
-                        ?>
-                    </h4>
                 </div>
                 <form action="validate_username.php" method="POST" class="login_form">
-        
-                    <div>
+
+                    <div>   
                         <label class="label_deg">Username</label>
                         <input type="text" name="username" required autofocus 
                                value="<?php echo htmlspecialchars($_SESSION['temp_username'] ?? '', ENT_QUOTES); ?>">
                     </div>
-                    <div>
+                    <div class ="submit-container">
+                        <a href="register_user.php">Sign up for free</a>         
                         <input class="btn btn-primary" type="submit" name="submit" value="Submit">
                     </div>
-                    <div class ="sign-up-link">
-                        <a href ="register_user.php">Sign up for free</a> 
+                    <div class="message-container">
+                        
+                        <?php if ($message): ?>
+                            <div class="message <?= htmlspecialchars($messageType) ?>">
+                                <?= htmlspecialchars($message) ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
+
                 </form>
             </div>
         </main>
@@ -41,3 +46,4 @@
         </footer>
     </body>
 </html>
+

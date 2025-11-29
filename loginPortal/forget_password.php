@@ -3,26 +3,12 @@ require __DIR__ . '/../includes/DatabaseConnection.php';
 require __DIR__ . '/../includes/DatabaseFunction.php';
 session_start();
 
-// Kiểm tra xem đã validate username chưa
-if (!isset($_SESSION['temp_username']) || !isset($_SESSION['temp_user_id'])) {
-    $_SESSION['loginMessage'] = "Please login first to reset password";
-    header("Location: username_login.php");
-    exit;
-}
-
-$user_id = $_SESSION['temp_user_id'];
 $username = $_SESSION['temp_username'];
 
-$user = get_user_by_id($pdo, $user_id);
-if (!$user) {
-    $_SESSION['loginMessage'] = "User not found";
-    header("Location: username_login.php");
-    exit;
-}
+$message = $_SESSION['loginMessage'] ?? '';           
+$messageType = $_SESSION['loginMessageType'] ?? 'error';  
 
-$message = $_SESSION['resetMessage'] ?? '';
-$messageType = $_SESSION['resetMessageType'] ?? '';
-unset($_SESSION['resetMessage'], $_SESSION['resetMessageType']);
+unset($_SESSION['loginMessage'], $_SESSION['loginMessageType']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,33 +22,39 @@ unset($_SESSION['resetMessage'], $_SESSION['resetMessageType']);
                 <div class="title_deg reset-password">
                     <img src="../images/icon.jpg" alt="Logo">
                 </div>
-                
-                <!-- ĐÃ SỬA: Thêm action="submit_forget.php" -->
+
                 <form action="submit_forget.php" method="POST" class="login_form">
                     <h4>Create New Password</h4>
                     
-                    <?php if ($message): ?>
-                        <div class="message <?php echo $messageType; ?>">
-                            <?php echo htmlspecialchars($message, ENT_QUOTES); ?>
-                        </div>
-                    <?php endif; ?>
+                    <p style="margin: 0; color: #0c5460;">
+                        <span style="font-size: 18px; color: #004085;">Account: <?= htmlspecialchars($username) ?></span>
+                    </p>
                     
                     <div>
                         <label class="label_deg">New Password <span style="color: #dc3545;">*</span></label>
-                        <input type="password" name="new_password" required autofocus minlength="6">
+                        <input type="password" name="new_password" required autofocus minlength="8">
+                        <p class="password-requirements">At least 8 characters</p>
                     </div>
                     
                     <div>
                         <label class="label_deg">Confirm Password <span style="color: #dc3545;">*</span></label>
-                        <input type="password" name="confirm_password" required minlength="6">
+                        <input type="password" name="confirm_password" required minlength="8">
                     </div>
                     
                     <div>
                         <input class="btn btn-primary" type="submit" value="Submit">
                     </div>
                     <div class="back-link">
-                        <a href="password_login.php"><= Back</a>
-                    </div>        
+                        <a href="password_login.php">← Back</a>
+                    </div>
+                    <div class="message-container">
+                        
+                        <?php if ($message): ?>
+                            <div class="message <?= htmlspecialchars($messageType) ?>">
+                                <?= htmlspecialchars($message) ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>    
                 </form>
             </div>
         </main>

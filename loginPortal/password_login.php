@@ -1,13 +1,16 @@
 <?php
 session_start();
 
-// Kiểm tra xem đã validate username chưa
 if (!isset($_SESSION['temp_username'])) {
     header("Location: username_login.php");
     exit;
 }
 
 $username = $_SESSION['temp_username'];
+
+$message = $_SESSION['loginMessage'] ?? '';
+$messageType = $_SESSION['loginMessageType'] ?? 'error';
+unset($_SESSION['loginMessage'], $_SESSION['loginMessageType']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,16 +24,9 @@ $username = $_SESSION['temp_username'];
             <div class="form_deg auto-height">
                 <div class="title_deg">
                     <img src="../images/icon.jpg" alt="Logo">
-                    <h4>
-                        <?php
-                        error_reporting(0);
-                        $message = $_SESSION['loginMessage'] ?? '';
-                        unset($_SESSION['loginMessage']);
-                        echo $message;
-                        ?>
-                    </h4>
                 </div>
-                <form action="validate_password.php" method="POST" class="login_form">               
+                <form action="validate_password.php" method="POST" class="login_form">
+        
                     <div>
                         <label class="label_deg">Password</label>
                         <input type="password" name="password" required autofocus>
@@ -45,8 +41,14 @@ $username = $_SESSION['temp_username'];
                     </div>
                     
                     <div class="back-link">
-                        <a href="username_login.php"><= Back</a>
+                        <a href="username_login.php">← Back</a>
                     </div>
+                    <div class="message-container">
+                        <?php if (!empty($message)): ?>
+                            <div class="message <?php echo $messageType === 'success' ? 'success' : 'error'; ?> auto-hide">
+                                <?php echo htmlspecialchars($message); ?>
+                            </div>
+                        <?php endif; ?>    
                 </form>
             </div>
         </main>

@@ -1,14 +1,5 @@
-<?php 
 
-if (!isset($_SESSION['username'])) {
-    header("Location: loginPortal/login.php");  // ✅ Bỏ dấu /
-    exit;
-}
-elseif($_SESSION['user_type'] != "user" && $_SESSION['user_type'] != "admin"){
-    header("Location: loginPortal/login.php");  // ✅ Bỏ dấu /
-    exit;
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

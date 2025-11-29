@@ -60,7 +60,7 @@
             </label>
             <textarea id="content" 
                       name="content" 
-                      class="form-control" 
+                      class="form-control"
                       placeholder="Describe your question in detail..."
                       required><?= htmlspecialchars($_POST['content'] ?? '') ?></textarea>
         </div>

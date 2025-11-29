@@ -87,11 +87,7 @@ function create_user(PDO $pdo, array $data) {
     $dataFiltered = array_intersect_key($data, array_flip($allowedCols));
     return insert_row($pdo, 'Users', $dataFiltered);
 }
-function register_user(PDO $pdo, array $data) {
-    $allowedCols = ['username','user_password','user_type']; 
-    $dataFiltered = array_intersect_key($data, array_flip($allowedCols));
-    return insert_row($pdo, 'Users', $dataFiltered);
-}
+
 function update_user(PDO $pdo, int $id, array $data) {
     $allowedCols = ['username', 'user_password','email'];
     $dataFiltered = array_intersect_key($data, array_flip($allowedCols));
@@ -101,6 +97,12 @@ function update_user(PDO $pdo, int $id, array $data) {
 function delete_user(PDO $pdo, int $id) {
     return delete_row($pdo, 'Users', 'id = :id', ['id' => $id]);
 }
+//validation for user
+function validate_username_exist($pdo, $username) {
+    $stmt = $pdo->prepare('SELECT COUNT(*) FROM users WHERE username = ?');
+    $stmt->execute([$username]);
+    return $stmt->fetchColumn() > 0;
+};
 
 // --- MODULES ---
 function get_modules(PDO $pdo) {

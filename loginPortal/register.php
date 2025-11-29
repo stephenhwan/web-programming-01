@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($username === '' || $user_password === '') {
         $_SESSION['loginMessage'] = 'Please fill all fields';
+        $_SESSION['loginMessageType'] = 'error';
         header('Location: register_user.php'); 
         exit();
     } 
@@ -24,16 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'user_type' => $user_type,
             'email' => $email
         ]);
-        $_SESSION['loginMessage'] = 'Registration successful! You can now log in.';
+        $_SESSION['loginMessage'] = '✅ Registration successful! You can now log in.';
+        $_SESSION['loginMessageType'] = 'success';
         header('Location: username_login.php'); 
         exit();
     } catch (Exception $e) {
         $_SESSION['loginMessage'] = 'Error: ' . $e->getMessage();
+        $_SESSION['loginMessageType'] = 'error';
         header('Location: register_user.php'); 
         exit();
     }
 }
-
 
 header('Location: register_user.php');
 exit();

@@ -2,9 +2,6 @@
 require __DIR__ . '/includes/DatabaseConnection.php';
 require __DIR__ . '/includes/DatabaseFunction.php';
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 
 $id = (int)($_GET['id'] ?? 0);
 
