@@ -8,9 +8,7 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 require __DIR__ . '/loginPortal/auth.php';
 
-session_start();
 
-// Kiểm tra nếu có yêu cầu gửi email chào mừng từ register
 if (isset($_SESSION['send_welcome_email']) && $_SESSION['send_welcome_email'] === true) {
     $username = $_SESSION['new_user_username'];
     $user_password = $_SESSION['new_user_password'];

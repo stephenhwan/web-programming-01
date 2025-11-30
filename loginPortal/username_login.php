@@ -42,7 +42,11 @@ unset($_SESSION['loginMessage'], $_SESSION['loginMessageType']);
             </div>
         </main>
         <footer class="footer_login">
-            &copy; web programming
+            &copy; web programming  
+            <div class ="terms-privacy">
+                <a href="../terms_privacy.html" target="_blank">Terms of uses</a> 
+                <a href="../terms_privacy.html" target="_blank">Privacy & cookies</a>
+
         </footer>
     </body>
 </html>

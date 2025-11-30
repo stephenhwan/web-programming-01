@@ -185,16 +185,30 @@ h1 {font-weight: normal; padding: 1.5em; color: white; text-shadow: 1px 1px 0px 
 
 .footer_login {
     position: fixed;
+    display: flex;
+    justify-content: center;
     bottom: 0;
     left: 0;
     right: 0;
-    text-align: center;
     padding: 12px;
     background-color: rgba(0, 123, 255, 0.85);
     color: white;
     font-size: 0.75em;
     backdrop-filter: blur(5px);
 }
+.footer_login .terms-privacy {
+    margin-left: 20px;
+}
+.footer_login a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+.footer_login a:hover {
+    text-decoration: underline;  /* khi hover thì gạch chân */
+}
+
 
 nav{background-color:#50C878;border-bottom: 3px solid #040404;}
 nav a{color:#fff;text-decoration:none;font-weight:600;}
