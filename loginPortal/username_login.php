@@ -4,7 +4,31 @@ $message = $_SESSION['loginMessage'] ?? '';
 $messageType = $_SESSION['loginMessageType'] ?? 'error';  
 
 unset($_SESSION['loginMessage'], $_SESSION['loginMessageType']);
-?>
+    
+if (!isset($_COOKIE['cookie_consent'])): ?>
+<div id="cookie-banner" class="cookie-banner">
+
+    <p class="cookie-text">
+        We value your privacy, We use cookies to enhance your browsing experience, provide personalized ads or content,
+        and analyze our traffic. <br>
+        By clicking "Accept all", you agree to our use of cookies.
+    </p>
+
+    <div class="cookie-buttons">
+        <button class="cookie-btn accept" onclick="acceptCookies()">Accept</button>
+        <button class="cookie-btn reject" onclick="acceptCookies()">Reject</button>
+        <a href="privacy.php" class="cookie-link">Learn More</a>
+    </div>
+</div>
+
+<script>
+function acceptCookies() {
+    document.cookie = "cookie_consent=true; max-age=31536000; path=/";
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html>
     <head>

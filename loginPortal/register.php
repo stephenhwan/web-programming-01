@@ -26,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'email' => $email
         ]);
         
-        // ✅ LƯU THÔNG TIN VÀO SESSION
         $_SESSION['new_user_username'] = $username;
         $_SESSION['new_user_password'] = $user_password;
         $_SESSION['new_user_email'] = $email;

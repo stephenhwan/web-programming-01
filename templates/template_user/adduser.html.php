@@ -22,7 +22,7 @@
                    name='user_password' 
                    id='user_password' 
                    required 
-                   style="width: 60%; padding: 8px; margin-top: 5px;">
+                   style="width: 60%; padding: 8px; margin-top: 5px;magin-left: 15px;">
         </div>
                 <div style="margin-bottom: 15px;">
             <label for='email'>email: </label>
@@ -30,7 +30,7 @@
                    name='email' 
                    id='email' 
                    required 
-                   style="width: 60%; padding: 8px; margin-top: 5px;">
+                   style="width: 60%; padding: 8px; margin-top: 5px; margin-left: 40px;">
         </div>
         <div style="margin-bottom: 15px;">
             <label for='user_type'>User Type: </label>
