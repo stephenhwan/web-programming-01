@@ -17,7 +17,7 @@ if (!isset($_COOKIE['cookie_consent'])): ?>
     <div class="cookie-buttons">
         <button class="cookie-btn accept" onclick="acceptCookies()">Accept</button>
         <button class="cookie-btn reject" onclick="acceptCookies()">Reject</button>
-        <a href="privacy.php" class="cookie-link">Learn More</a>
+        <a href="../templates/termPrivacy.html.php" class="cookie-link">Learn More</a>
     </div>
 </div>
 
@@ -68,8 +68,8 @@ function acceptCookies() {
         <footer class="footer_login">
             &copy; web programming  
             <div class ="terms-privacy">
-                <a href="../terms_privacy.html" target="_blank">Terms of uses</a> 
-                <a href="../terms_privacy.html" target="_blank">Privacy & cookies</a>
+                <a href="../templates/termPrivacy.html.php" target="_blank">Terms of uses</a> 
+                <a href="../templates/termPrivacy.html.php" target="_blank">Privacy & cookies</a>
 
         </footer>
     </body>

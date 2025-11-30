@@ -9,13 +9,13 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Content</th>
-                    <th>Picture</th>
-                    <th>Created Date</th>
-                    <th>User</th>
-                    <th>Module</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Picture</th>
+                    <th scope="col">Created Date</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Module</th>
                 </tr>
             </thead>
             <tbody>
