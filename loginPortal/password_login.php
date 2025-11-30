@@ -31,17 +31,12 @@ unset($_SESSION['loginMessage'], $_SESSION['loginMessageType']);
                         <label class="label_deg">Password</label>
                         <input type="password" name="password" required autofocus>
                     </div>
-                    
-                    <div>
-                        <input class="btn btn-primary" type="submit" name="submit" value="Submit">
-                    </div>
-                    
-                    <div class="forgot-password">
+                    <div class="submit-container">
                         <a href="forget_password.php">Forgot Password?</a>
+                        <button type="submit" class="btn btn-primary">Login</button>
                     </div>
-                    
                     <div class="back-link">
-                        <a href="username_login.php">← Back</a>
+                        <a href="username_login.php"><= Back</a>
                     </div>
                     <div class="message-container">
                         <?php if (!empty($message)): ?>

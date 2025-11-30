@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_type = 'user';
     $email = trim($_POST['email'] ?? '');
     
-    if ($username === '' || $user_password === '') {
+    if ($username === '' || $email === '') {
         $_SESSION['loginMessage'] = 'Please fill all fields';
         $_SESSION['loginMessageType'] = 'error';
         header('Location: register_user.php'); 
@@ -26,13 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'email' => $email
         ]);
         
-
-        $_SESSION['send_welcome_email'] = true;
+        // ✅ LƯU THÔNG TIN VÀO SESSION
         $_SESSION['new_user_username'] = $username;
         $_SESSION['new_user_password'] = $user_password;
         $_SESSION['new_user_email'] = $email;
-
-        header('Location: ../contact.php'); 
+        
+        // ✅ REDIRECT ĐẾN TRANG TERMS (bước 1)
+        header('Location: term.php'); 
         exit();
         
     } catch (Exception $e) {

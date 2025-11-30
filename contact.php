@@ -97,7 +97,8 @@ if (isset($_SESSION['send_welcome_email']) && $_SESSION['send_welcome_email'] ==
     exit();
 }
 
-// Xử lý form contact bình thường
+
+
 check_login();
 if(isset($_POST['submit'])) {
     $mail = new PHPMailer(true);

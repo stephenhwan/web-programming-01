@@ -105,6 +105,7 @@ h1 {font-weight: normal; padding: 1.5em; color: white; text-shadow: 1px 1px 0px 
 }
 
 .login_form input[type="text"],
+.login_form input[type="password"],
 .login_form input[type="email"] {
     width: 92%;
     padding: 12px 15px;
@@ -116,6 +117,7 @@ h1 {font-weight: normal; padding: 1.5em; color: white; text-shadow: 1px 1px 0px 
 }
 
 .login_form input[type="text"]:focus,
+.login_form input[type="password"]:focus,
 .login_form input[type="email"]:focus {
     outline: none;
     border-color: #007bff;
@@ -125,6 +127,7 @@ h1 {font-weight: normal; padding: 1.5em; color: white; text-shadow: 1px 1px 0px 
 
 .login_form .btn-primary {
     width: 30%;
+    margin-top: 15px;
     padding: 12px 24px;
     float: right;
     background: #007bff;
@@ -141,6 +144,43 @@ h1 {font-weight: normal; padding: 1.5em; color: white; text-shadow: 1px 1px 0px 
     background: #0056b3;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+
+
+.login_form .terms-content p.user-name strong {
+    color: #2a1377; /* nhấn mạnh username */
+    text-decoration-line: underline;
+}
+
+/* Vùng checkbox */
+.login_form .checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin: 0.5rem 0 1.5rem 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Ô checkbox */
+.login_form .checkbox-container input[type="checkbox"] {
+    margin-top: 2px;          /* canh cho đẹp với text */
+    width: 18px;
+    height: 18px;
+    accent-color: #50C878;    /* màu tick */
+    cursor: pointer;
+}
+
+/* Label của checkbox */
+.login_form .checkbox-container label {
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+/* Hover nhẹ cho label */
+.login_form .checkbox-container label:hover {
+    text-decoration: underline;
 }
 
 .footer_login {
@@ -170,8 +210,7 @@ footer {padding: 1em; background-color: #FFC9A7 ; font-size: 0.8em;}
 p {margin-bottom: 1em;}
 
 body {font-size: 1.2em; font-family: arial, helvetica, sans-serif}
-input, label, select, textarea {float: left; width: 15em; margin-bottom: 1em;  padding: 0.5em;}
-label {clear: left; padding: 0; margin: 0;}
+
 input[type="submit"] { width: auto; padding: 0.5em 1em; clear: both}
 form {overflow: auto; clear: both; display: block;}
 
@@ -571,6 +610,7 @@ textarea.form-control {
     border-top: 1px solid #f0f0f0;
 }
 
+
 .forgot-password a {
     color: #007bff;
     margin-top: 100px;
@@ -720,12 +760,13 @@ textarea.form-control {
     clear: both;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    font-size: 14px;
     margin-top: 25px;
 }
 
 .submit-container input[type="submit"] {
     width: auto;
+
     padding: 12px 24px;
     background: #007bff;
     color: white;
@@ -744,24 +785,36 @@ textarea.form-control {
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
-.submit-container a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 550;
-    transition: all 0.s;
-    padding-bottom: 50px;
+.back-link {
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: left;
+    padding-bottom: 10px;
+    background: linear-gradient(to top, rgba(255,255,255,0.95), transparent);
 }
 
-.submit-container a:hover {
-    text-decoration: underline;
-    color: #0056b3;
+.back-link-term a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.back-link-term a:hover {
+    color: #007bff;
+    background: #e3f2fd;
+    border-color: #007bff;
 }
 
 .login_form a.btn_register {
     display: inline-block;
     padding: 12px 24px;
-    float: right;
     background: #007bff;
     color: white;
     border: none;
@@ -772,3 +825,5 @@ textarea.form-control {
     transition: all 0.3s;
     text-decoration: none;
 }
+
+
